@@ -1,13 +1,13 @@
-def READ(line):
+def READ(line: str) -> str:
     return line
 
-def EVAL(line):
-    return line 
-
-def PRINT(line):
+def EVAL(line: str) -> str:
     return line
 
-def rep(line):
+def PRINT(line: str) -> str:
+    return line
+
+def rep(line: str) -> str:
     re = READ(line)
     ev = EVAL(re)
     return PRINT(ev)
