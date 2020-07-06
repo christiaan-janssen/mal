@@ -1,3 +1,18 @@
+# TODO Fix '?' on the prompt
+
+from cmd import Cmd
+import readline
+
+class OtterPrompt(Cmd):
+    def default(self, line):
+        print(rep(line))
+
+    def do_quit(self, args):
+        """Quits the program."""
+        print ("Quitting.")
+        raise SystemExit
+
+
 def READ(line: str) -> str:
     return line
 
@@ -12,6 +27,8 @@ def rep(line: str) -> str:
     ev = EVAL(re)
     return PRINT(ev)
 
-while(True):
-    line = input('user> ')
-    print(rep(line))
+if __name__ == '__main__':
+    prompt = OtterPrompt()
+    prompt.prompt = 'user> '
+    prompt.default
+    prompt.cmdloop()
